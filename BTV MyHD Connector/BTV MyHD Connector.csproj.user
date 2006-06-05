@@ -1,0 +1,21 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <ApplicationRevision>0</ApplicationRevision>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <StartProgram>C:\Program Files (x86)\TestDriven.NET 2.0\ProcessInvocation.exe</StartProgram>
+    <StartWorkingDirectory>C:\Program Files (x86)\TestDriven.NET 2.0</StartWorkingDirectory>
+    <StartArguments>/assemblyName:"TestDriven.TestRunner.Server, Version=2.0.1380.0, Culture=neutral, PublicKeyToken=50ecb853f8c6b8d2" /xmlName:"M:TestDriven.TestRunner.DebugTestRunner.run(System.String,System.String,System.String,System.String,System.String)" /parameter:"tcp://127.0.0.1:3046/4351c147-0120-45d3-a44f-bc770346b376" /parameter:"tcp://127.0.0.1:3046/e781024b-f498-4d26-bbeb-24e071a48c25" /parameter:"C:\Documents and Settings\nirvdrum\My Documents\Visual Studio 2005\Projects\BTV MyHD Connector\BTV MyHD Connector\bin\Release\BTV MyHD Connector.exe" /parameter:"M:BTV_MyHD_Connector.RegistryManagerTest.testGetStations" /parameter</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartProgram>C:\Program Files (x86)\TestDriven.NET 2.0\ProcessInvocation.exe</StartProgram>
+    <StartWorkingDirectory>C:\Program Files (x86)\TestDriven.NET 2.0</StartWorkingDirectory>
+    <StartArguments>/assemblyName:"TestDriven.TestRunner.Server, Version=2.0.1380.0, Culture=neutral, PublicKeyToken=50ecb853f8c6b8d2" /xmlName:"M:TestDriven.TestRunner.DebugTestRunner.run(System.String,System.String,System.String,System.String,System.String)" /parameter:"tcp://127.0.0.1:3375/f0d72877-3c10-406e-919a-b4d0bd0f099e" /parameter:"tcp://127.0.0.1:3375/b04bf6cc-9bd6-438d-9651-8701c69dde30" /parameter:"C:\Documents and Settings\nirvdrum\My Documents\Visual Studio 2005\Projects\BTV MyHD Connector\BTV MyHD Connector\bin\Release\BTV MyHD Connector.exe" /parameter:"M:BTV_MyHD_Connector.RecordingTest.setUp" /parameter</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+</Project>

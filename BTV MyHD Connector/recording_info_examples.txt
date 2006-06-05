@@ -1,0 +1,100 @@
+Property: Actors; value: Billy West, Katey Sagal, John DiMaggio, Lauren Tom, Phi
+l LaMarr, Maurice LaMarche
+Property: ActualDuration; value: 18000000000
+Property: ActualStart; value: 127821186000000000
+Property: Channel; value: 51
+Property: Credits; value: Matt Groening, David X. Cohen
+Property: Description; value:
+Property: DisplayedChannelID; value: 51
+Property: DisplayTitle; value: Futurama
+Property: EPGID; value: EP3034830015
+Property: EPGRepeat; value: ALWAYS
+Property: EpisodeDescription; value: Court-martialed Zap Brannigan gets a job at
+ Planet Express.
+Property: EpisodeTitle; value: Brannigan, Begin Again
+Property: Genre; value: Animated / Sitcom / Science fiction
+Property: GUID; value: 0333aab2-b79c-4291-bbc2-57ee5c35e07a
+Property: IsHD; value: N
+Property: MajorChannel; value: 0
+Property: MinorChannel; value: 0
+Property: MovieYear; value:
+Property: NumberOfParts; value:
+Property: OriginalAirDate; value: 19991128
+Property: ParentGUID; value: a077618e-6e32-4d21-9554-3bccbcbbbb45
+Property: PartNumber; value:
+Property: PreviousRow; value: 00000051000000012131200601190400
+Property: Priority; value: 1
+Property: Rating; value:
+Property: RejectionEnum; value:
+Property: RejectionReason; value:
+Property: Rules; value: EPG
+Property: SearchDisplayTitle; value: Futurama
+Property: SearchTitle; value: futurama
+Property: SeriesKey; value: 303483
+Property: SourceIndex; value: 0
+Property: StationCallsign; value: TOON
+Property: StationName; value: Cartoon Network
+Property: StationNumber; value: 12131
+Property: TargetDuration; value: 18000000000
+Property: TargetStart; value: 127821186000000000
+Property: Title; value: Futurama
+Property: TMSChannel; value: 51
+Property: UniqueChannelID; value: 00000051000000012131
+Property: VideoDeviceName; value: @device:pnp:\\?\display#ntativrv40#5&300874f6&
+0&80000008&01&00#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global
+
+
+
+
+
+
+
+
+
+
+
+Property: Actors; value: Lake Bell, Rade Serbedzija, Jay R. Ferguson, Carter Jen
+kins, Ian Anthony Dale, Leighton Meester
+Property: ActualDuration; value: 36000000000
+Property: ActualStart; value: 127813284000000000
+Property: Channel; value: 787
+Property: Credits; value: Joshua Pate, Jonas Pate
+Property: Description; value:
+Property: DisplayedChannelID; value: 787
+Property: DisplayTitle; value: Surface
+Property: EPGID; value: EP7538270012
+Property: EPGRepeat; value: ALWAYS
+Property: EpisodeDescription; value: While hiding from Lee and his legion of sec
+ret agents, Laura has a bizarre Internet exchange with a person who claims to ha
+ve information regarding the origin of the creatures.
+Property: EpisodeTitle; value: Episode 12
+Property: Genre; value: Drama / Science fiction
+Property: GUID; value: 0b4c0321-c23f-4fa7-af86-b28c892e300a
+Property: IsHD; value: Y
+Property: MajorChannel; value: 0
+Property: MinorChannel; value: 0
+Property: MovieYear; value:
+Property: NumberOfParts; value:
+Property: OriginalAirDate; value: 20060109
+Property: ParentGUID; value: 71dca460-4935-49f2-8a76-4cf02c658a32
+Property: PartNumber; value:
+Property: PreviousRow; value: 00000787000000020358200601100030
+Property: Priority; value: 0
+Property: Rating; value:
+Property: RejectionEnum; value:
+Property: RejectionReason; value:
+Property: Rules; value: EPG
+Property: SearchDisplayTitle; value: Surface
+Property: SearchTitle; value: surface
+Property: SeriesKey; value: 753827
+Property: SourceIndex; value: 0
+Property: StationCallsign; value: WHDHDT
+Property: StationName; value: WHDHDT (WHDH-DT)
+Property: StationNumber; value: 20358
+Property: TargetDuration; value: 36000000000
+Property: TargetStart; value: 127813284000000000
+Property: Title; value: Surface
+Property: TMSChannel; value: 787
+Property: UniqueChannelID; value: 00000787000000020358
+Property: VideoDeviceName; value: @device:pnp:\\?\display#ntativrv40#5&300874f6&
+0&80000008&01&00#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global

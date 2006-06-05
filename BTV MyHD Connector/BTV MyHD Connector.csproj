@@ -1,0 +1,152 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D4488B0-0F6A-44F6-99B5-BC587B630045}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BTV_MyHD_Connector</RootNamespace>
+    <AssemblyName>BTV MyHD Connector</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <NoStdLib>False</NoStdLib>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AMS.Profile, Version=2.0.2208.18589, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\AMS.Profile.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.2.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BTV.cs" />
+    <Compile Include="BTV_MyHD_Connector.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Recording.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordingTest.cs" />
+    <Compile Include="RegistryManager.cs" />
+    <Compile Include="RegistryManagerTest.cs" />
+    <Compile Include="Station.cs" />
+    <Compile Include="StationManager.cs" />
+    <Compile Include="StationManagerTest.cs" />
+    <Compile Include="StationTest.cs" />
+    <Compile Include="Web References\WebDispatcher\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebLicenseManager\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebScheduler\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebLicenseManager\BTVLicenseManager.disco" />
+    <None Include="Web References\WebLicenseManager\BTVLicenseManager.wsdl" />
+    <None Include="Web References\WebLicenseManager\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebScheduler\BTVScheduler.disco" />
+    <None Include="Web References\WebScheduler\BTVScheduler.wsdl" />
+    <None Include="Web References\WebScheduler\PVSPropertyBag.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebScheduler\PVSPropertyBagArray.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebScheduler\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="config.ini" />
+    <None Include="Web References\WebDispatcher\BTVDispatcher.disco" />
+    <None Include="Web References\WebDispatcher\BTVDispatcher.wsdl" />
+    <None Include="Web References\WebDispatcher\PVSPropertyBag.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebDispatcher\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+    <WebReferenceUrl Include="http://localhost:8129/wsdl/BTVDispatcher.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebDispatcher\</RelPath>
+      <UpdateFromURL>http://localhost:8129/wsdl/BTVDispatcher.asmx</UpdateFromURL>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BTV_MyHD_Connector_WebDispatcher_BTVDispatcher</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8129/wsdl/BTVLicenseManager.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebLicenseManager\</RelPath>
+      <UpdateFromURL>http://localhost:8129/wsdl/BTVLicenseManager.asmx</UpdateFromURL>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BTV_MyHD_Connector_WebLicenseManager_BTVLicenseManager</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8129/wsdl/BTVScheduler.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebScheduler\</RelPath>
+      <UpdateFromURL>http://localhost:8129/wsdl/BTVScheduler.asmx</UpdateFromURL>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BTV_MyHD_Connector_WebScheduler_BTVScheduler</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <Content Include="LICENSE.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

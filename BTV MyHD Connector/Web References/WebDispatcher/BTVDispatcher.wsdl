@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s0="http://www.snapstream.com/WebService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s1="http://www.snapstream.com/types" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.snapstream.com/WebService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.snapstream.com/WebService">
+      <s:import namespace="http://www.snapstream.com/types" />
+      <s:element name="GetActiveRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActiveRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PVSPropertyBag" nillable="true" type="s1:PVSPropertyBag" />
+      <s:element name="GetActiveRecordingsWithChannel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueChannelID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveRecordingsWithChannelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveRecordingsWithChannelResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEngines">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEnginesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnginesResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnginesWithChannel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueChannelID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnginesWithChannelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnginesWithChannelResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSources">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sources" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSourcesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.snapstream.com/types">
+      <s:import namespace="http://www.snapstream.com/WebService" />
+      <s:complexType name="ArrayOfPVSPropertyBag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s0:PVSPropertyBag" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PVSPropertyBag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Properties" type="s1:ArrayOfPVSProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPVSProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PVSProperty" nillable="true" type="s1:PVSProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PVSProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="GetActiveRecordingsSoapIn">
+    <part name="parameters" element="s0:GetActiveRecordings" />
+  </message>
+  <message name="GetActiveRecordingsSoapOut">
+    <part name="parameters" element="s0:GetActiveRecordingsResponse" />
+  </message>
+  <message name="GetActiveRecordingsWithChannelSoapIn">
+    <part name="parameters" element="s0:GetActiveRecordingsWithChannel" />
+  </message>
+  <message name="GetActiveRecordingsWithChannelSoapOut">
+    <part name="parameters" element="s0:GetActiveRecordingsWithChannelResponse" />
+  </message>
+  <message name="GetEnginesSoapIn">
+    <part name="parameters" element="s0:GetEngines" />
+  </message>
+  <message name="GetEnginesSoapOut">
+    <part name="parameters" element="s0:GetEnginesResponse" />
+  </message>
+  <message name="GetEnginesWithChannelSoapIn">
+    <part name="parameters" element="s0:GetEnginesWithChannel" />
+  </message>
+  <message name="GetEnginesWithChannelSoapOut">
+    <part name="parameters" element="s0:GetEnginesWithChannelResponse" />
+  </message>
+  <message name="SetSourcesSoapIn">
+    <part name="parameters" element="s0:SetSources" />
+  </message>
+  <message name="SetSourcesSoapOut">
+    <part name="parameters" element="s0:SetSourcesResponse" />
+  </message>
+  <portType name="BTVDispatcherSoap">
+    <operation name="GetActiveRecordings">
+      <input message="s0:GetActiveRecordingsSoapIn" />
+      <output message="s0:GetActiveRecordingsSoapOut" />
+    </operation>
+    <operation name="GetActiveRecordingsWithChannel">
+      <input message="s0:GetActiveRecordingsWithChannelSoapIn" />
+      <output message="s0:GetActiveRecordingsWithChannelSoapOut" />
+    </operation>
+    <operation name="GetEngines">
+      <input message="s0:GetEnginesSoapIn" />
+      <output message="s0:GetEnginesSoapOut" />
+    </operation>
+    <operation name="GetEnginesWithChannel">
+      <input message="s0:GetEnginesWithChannelSoapIn" />
+      <output message="s0:GetEnginesWithChannelSoapOut" />
+    </operation>
+    <operation name="SetSources">
+      <input message="s0:SetSourcesSoapIn" />
+      <output message="s0:SetSourcesSoapOut" />
+    </operation>
+  </portType>
+  <binding name="BTVDispatcherSoap" type="s0:BTVDispatcherSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetActiveRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetActiveRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetActiveRecordingsWithChannel">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetActiveRecordingsWithChannel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEngines">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetEngines" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEnginesWithChannel">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetEnginesWithChannel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetSources">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/SetSources" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BTVDispatcher">
+    <port name="BTVDispatcherSoap" binding="s0:BTVDispatcherSoap">
+      <soap:address location="http://127.0.0.1:8129/wsdl/BTVDispatcher.asmx" />
+    </port>
+  </service>
+</definitions>

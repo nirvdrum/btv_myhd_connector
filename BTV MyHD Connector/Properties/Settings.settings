@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BTV_MyHD_Connector.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BTV_MyHD_Connector_WebLicenseManager_BTVLicenseManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1:8129/wsdl/BTVLicenseManager.asmx</Value>
+    </Setting>
+    <Setting Name="BTV_MyHD_Connector_WebScheduler_BTVScheduler" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1:8129/wsdl/BTVScheduler.asmx</Value>
+    </Setting>
+    <Setting Name="BTV_MyHD_Connector_WebDispatcher_BTVDispatcher" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1:8129/wsdl/BTVDispatcher.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

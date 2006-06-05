@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s0="http://www.snapstream.com/WebService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.snapstream.com/WebService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.snapstream.com/WebService">
+      <s:element name="Logon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="networkLicense" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogonRemote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="networkLicense" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonRemoteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Logoff">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogoffResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVersionNumber">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVersionNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="LogonSoapIn">
+    <part name="parameters" element="s0:Logon" />
+  </message>
+  <message name="LogonSoapOut">
+    <part name="parameters" element="s0:LogonResponse" />
+  </message>
+  <message name="LogonRemoteSoapIn">
+    <part name="parameters" element="s0:LogonRemote" />
+  </message>
+  <message name="LogonRemoteSoapOut">
+    <part name="parameters" element="s0:LogonRemoteResponse" />
+  </message>
+  <message name="LogoffSoapIn">
+    <part name="parameters" element="s0:Logoff" />
+  </message>
+  <message name="LogoffSoapOut">
+    <part name="parameters" element="s0:LogoffResponse" />
+  </message>
+  <message name="GetVersionNumberSoapIn">
+    <part name="parameters" element="s0:GetVersionNumber" />
+  </message>
+  <message name="GetVersionNumberSoapOut">
+    <part name="parameters" element="s0:GetVersionNumberResponse" />
+  </message>
+  <portType name="BTVLicenseManagerSoap">
+    <operation name="Logon">
+      <input message="s0:LogonSoapIn" />
+      <output message="s0:LogonSoapOut" />
+    </operation>
+    <operation name="LogonRemote">
+      <input message="s0:LogonRemoteSoapIn" />
+      <output message="s0:LogonRemoteSoapOut" />
+    </operation>
+    <operation name="Logoff">
+      <input message="s0:LogoffSoapIn" />
+      <output message="s0:LogoffSoapOut" />
+    </operation>
+    <operation name="GetVersionNumber">
+      <input message="s0:GetVersionNumberSoapIn" />
+      <output message="s0:GetVersionNumberSoapOut" />
+    </operation>
+  </portType>
+  <binding name="BTVLicenseManagerSoap" type="s0:BTVLicenseManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Logon">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/Logon" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LogonRemote">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/LogonRemote" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Logoff">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/Logoff" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetVersionNumber">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetVersionNumber" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BTVLicenseManager">
+    <port name="BTVLicenseManagerSoap" binding="s0:BTVLicenseManagerSoap">
+      <soap:address location="http://127.0.0.1:8129/wsdl/BTVLicenseManager.asmx" />
+    </port>
+  </service>
+</definitions>

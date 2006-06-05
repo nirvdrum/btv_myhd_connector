@@ -1,0 +1,61 @@
+﻿<?xml version="1.0"?>
+<project name="btv_myhd_connector" default="compile">	
+	<property name="build.dir" value="build" readonly="true"/>
+	<property name="exe.file" value="BTV MyHD Connector.exe" readonly="true"/>
+	
+	
+	<target name="build" description="Default build target">
+		<echo message="Running default build target." />
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<csc output="${build.dir}/${exe.file}" target="exe">
+			<sources>
+				<include name="**/*.cs"/>
+			</sources>
+		
+			<references>
+				<include name="System.Data.dll"/>
+				<include name="lib/AMS.Profile.dll"/>
+				<include name="lib/System.Data.SQLite.dll"/>
+				<include name="lib/nunit.framework.dll"/>
+			</references>
+		</csc>
+	
+		<!-- Copy all the libraries to the output directory. -->
+		<copy todir="${build.dir}">
+			<fileset basedir="lib">
+				<include name="*.dll"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy the empty database to the output directory. -->
+		<copy file="recordings.db" todir="${build.dir}"/>
+	
+		<!-- Copy the assembly config file to the output directory. -->
+		<copy file="app.config" todir="${build.dir}"/>
+		<move file="${build.dir}\app.config" tofile="${build.dir}\${exe.file}.config"/>
+	
+		<!-- Copy the base config file for the app to the output directory. -->
+		<copy file="config.ini" todir="${build.dir}"/>
+	
+		<!-- Copy the license information to the output directory. -->
+		<copy file="LICENSE.txt" todir="${build.dir}"/>
+		<copy file="NOTICE.txt" todir="${build.dir}"/>
+	</target>
+	
+	<target name="test" depends="compile">
+		<nunit2>
+			<formatter type="Plain"/>
+			<test assemblyname="${build.dir}/${exe.file}" appconfig="app.config"/>
+		</nunit2>
+	</target>
+</project>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://127.0.0.1:8129/wsdl/BTVDispatcher.asmx?wsdl" docRef="http://127.0.0.1:8129/wsdl/BTVDispatcher.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://127.0.0.1:8129/wsdl/BTVDispatcher.asmx" xmlns:q1="http://www.snapstream.com/WebService" binding="q1:BTVDispatcherSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

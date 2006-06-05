@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s0="http://www.snapstream.com/WebService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s1="http://www.snapstream.com/types" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.snapstream.com/WebService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.snapstream.com/WebService">
+      <s:import namespace="http://www.snapstream.com/types" />
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetJobs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PVSPropertyBag" nillable="true" type="s1:PVSPropertyBag" />
+      <s:element name="GetUpcomingRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUpcomingRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpcomingRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditRecordingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s2:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="bag" type="s1:PVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditRecordingJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPossibleRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPossibleRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPossibleRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEpisodeStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bag" type="s1:PVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEpisodeStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEpisodeStatusResult" type="s1:PVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlockedRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBlockedRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBlockedRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExistingConflicts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s2:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExistingConflictsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExistingConflictsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotentialConflicts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bag" type="s1:PVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotentialConflictsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPotentialConflictsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetForcedRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetForcedRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetForcedRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRejectedRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRejectedRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRejectedRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecentRecordings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRecentRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecentRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprioritizeJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s2:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="priority" type="s:unsignedInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprioritizeJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveRecordingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s2:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveRecordingJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddRecordingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bag" type="s1:PVSPropertyBag" />
+            <s:element minOccurs="1" maxOccurs="1" name="highestPriority" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRecordingJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetGlobalPadding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="padding" type="s:unsignedLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGlobalPaddingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s2:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotentialRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bag" type="s1:PVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotentialRecordingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPotentialRecordingsResult" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextRecording">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNextRecordingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextRecordingResult" type="s1:PVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBlockedRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bags" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBlockedRecordingsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddForcedRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bags" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddForcedRecordingsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveBlockedRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bags" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveBlockedRecordingsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveForcedRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bags" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveForcedRecordingsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddRecentRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bags" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRecentRecordingsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveRecentRecordings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bags" type="s1:ArrayOfPVSPropertyBag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveRecentRecordingsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPotentialScheduleAtPriority">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bag" type="s1:PVSPropertyBag" />
+            <s:element minOccurs="1" maxOccurs="1" name="priority" type="s:unsignedInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotentialScheduleAtPriorityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPotentialScheduleAtPriorityResult" type="s1:ArrayOfPVSPropertyBagArray" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PVSPropertyBagArray" nillable="true" type="s1:PVSPropertyBagArray" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.snapstream.com/types">
+      <s:import namespace="http://www.snapstream.com/WebService" />
+      <s:complexType name="ArrayOfPVSPropertyBag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s0:PVSPropertyBag" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PVSPropertyBag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Properties" type="s1:ArrayOfPVSProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPVSProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PVSProperty" nillable="true" type="s1:PVSProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PVSProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPVSPropertyBagArray">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s0:PVSPropertyBagArray" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PVSPropertyBagArray">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Bags" type="s1:ArrayOfPVSPropertyBag1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPVSPropertyBag1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PVSPropertyBag" nillable="true" type="s1:PVSPropertyBag" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </types>
+  <message name="GetJobsSoapIn">
+    <part name="parameters" element="s0:GetJobs" />
+  </message>
+  <message name="GetJobsSoapOut">
+    <part name="parameters" element="s0:GetJobsResponse" />
+  </message>
+  <message name="GetUpcomingRecordingsSoapIn">
+    <part name="parameters" element="s0:GetUpcomingRecordings" />
+  </message>
+  <message name="GetUpcomingRecordingsSoapOut">
+    <part name="parameters" element="s0:GetUpcomingRecordingsResponse" />
+  </message>
+  <message name="EditRecordingJobSoapIn">
+    <part name="parameters" element="s0:EditRecordingJob" />
+  </message>
+  <message name="EditRecordingJobSoapOut">
+    <part name="parameters" element="s0:EditRecordingJobResponse" />
+  </message>
+  <message name="GetPossibleRecordingsSoapIn">
+    <part name="parameters" element="s0:GetPossibleRecordings" />
+  </message>
+  <message name="GetPossibleRecordingsSoapOut">
+    <part name="parameters" element="s0:GetPossibleRecordingsResponse" />
+  </message>
+  <message name="GetEpisodeStatusSoapIn">
+    <part name="parameters" element="s0:GetEpisodeStatus" />
+  </message>
+  <message name="GetEpisodeStatusSoapOut">
+    <part name="parameters" element="s0:GetEpisodeStatusResponse" />
+  </message>
+  <message name="GetBlockedRecordingsSoapIn">
+    <part name="parameters" element="s0:GetBlockedRecordings" />
+  </message>
+  <message name="GetBlockedRecordingsSoapOut">
+    <part name="parameters" element="s0:GetBlockedRecordingsResponse" />
+  </message>
+  <message name="GetExistingConflictsSoapIn">
+    <part name="parameters" element="s0:GetExistingConflicts" />
+  </message>
+  <message name="GetExistingConflictsSoapOut">
+    <part name="parameters" element="s0:GetExistingConflictsResponse" />
+  </message>
+  <message name="GetPotentialConflictsSoapIn">
+    <part name="parameters" element="s0:GetPotentialConflicts" />
+  </message>
+  <message name="GetPotentialConflictsSoapOut">
+    <part name="parameters" element="s0:GetPotentialConflictsResponse" />
+  </message>
+  <message name="GetForcedRecordingsSoapIn">
+    <part name="parameters" element="s0:GetForcedRecordings" />
+  </message>
+  <message name="GetForcedRecordingsSoapOut">
+    <part name="parameters" element="s0:GetForcedRecordingsResponse" />
+  </message>
+  <message name="GetRejectedRecordingsSoapIn">
+    <part name="parameters" element="s0:GetRejectedRecordings" />
+  </message>
+  <message name="GetRejectedRecordingsSoapOut">
+    <part name="parameters" element="s0:GetRejectedRecordingsResponse" />
+  </message>
+  <message name="GetRecentRecordingsSoapIn">
+    <part name="parameters" element="s0:GetRecentRecordings" />
+  </message>
+  <message name="GetRecentRecordingsSoapOut">
+    <part name="parameters" element="s0:GetRecentRecordingsResponse" />
+  </message>
+  <message name="ReprioritizeJobSoapIn">
+    <part name="parameters" element="s0:ReprioritizeJob" />
+  </message>
+  <message name="ReprioritizeJobSoapOut">
+    <part name="parameters" element="s0:ReprioritizeJobResponse" />
+  </message>
+  <message name="RemoveRecordingJobSoapIn">
+    <part name="parameters" element="s0:RemoveRecordingJob" />
+  </message>
+  <message name="RemoveRecordingJobSoapOut">
+    <part name="parameters" element="s0:RemoveRecordingJobResponse" />
+  </message>
+  <message name="AddRecordingJobSoapIn">
+    <part name="parameters" element="s0:AddRecordingJob" />
+  </message>
+  <message name="AddRecordingJobSoapOut">
+    <part name="parameters" element="s0:AddRecordingJobResponse" />
+  </message>
+  <message name="SetGlobalPaddingSoapIn">
+    <part name="parameters" element="s0:SetGlobalPadding" />
+  </message>
+  <message name="SetGlobalPaddingSoapOut">
+    <part name="parameters" element="s0:SetGlobalPaddingResponse" />
+  </message>
+  <message name="GetRecordingsSoapIn">
+    <part name="parameters" element="s0:GetRecordings" />
+  </message>
+  <message name="GetRecordingsSoapOut">
+    <part name="parameters" element="s0:GetRecordingsResponse" />
+  </message>
+  <message name="GetPotentialRecordingsSoapIn">
+    <part name="parameters" element="s0:GetPotentialRecordings" />
+  </message>
+  <message name="GetPotentialRecordingsSoapOut">
+    <part name="parameters" element="s0:GetPotentialRecordingsResponse" />
+  </message>
+  <message name="GetNextRecordingSoapIn">
+    <part name="parameters" element="s0:GetNextRecording" />
+  </message>
+  <message name="GetNextRecordingSoapOut">
+    <part name="parameters" element="s0:GetNextRecordingResponse" />
+  </message>
+  <message name="AddBlockedRecordingsSoapIn">
+    <part name="parameters" element="s0:AddBlockedRecordings" />
+  </message>
+  <message name="AddBlockedRecordingsSoapOut">
+    <part name="parameters" element="s0:AddBlockedRecordingsResponse" />
+  </message>
+  <message name="AddForcedRecordingsSoapIn">
+    <part name="parameters" element="s0:AddForcedRecordings" />
+  </message>
+  <message name="AddForcedRecordingsSoapOut">
+    <part name="parameters" element="s0:AddForcedRecordingsResponse" />
+  </message>
+  <message name="RemoveBlockedRecordingsSoapIn">
+    <part name="parameters" element="s0:RemoveBlockedRecordings" />
+  </message>
+  <message name="RemoveBlockedRecordingsSoapOut">
+    <part name="parameters" element="s0:RemoveBlockedRecordingsResponse" />
+  </message>
+  <message name="RemoveForcedRecordingsSoapIn">
+    <part name="parameters" element="s0:RemoveForcedRecordings" />
+  </message>
+  <message name="RemoveForcedRecordingsSoapOut">
+    <part name="parameters" element="s0:RemoveForcedRecordingsResponse" />
+  </message>
+  <message name="AddRecentRecordingsSoapIn">
+    <part name="parameters" element="s0:AddRecentRecordings" />
+  </message>
+  <message name="AddRecentRecordingsSoapOut">
+    <part name="parameters" element="s0:AddRecentRecordingsResponse" />
+  </message>
+  <message name="RemoveRecentRecordingsSoapIn">
+    <part name="parameters" element="s0:RemoveRecentRecordings" />
+  </message>
+  <message name="RemoveRecentRecordingsSoapOut">
+    <part name="parameters" element="s0:RemoveRecentRecordingsResponse" />
+  </message>
+  <message name="GetPotentialScheduleAtPrioritySoapIn">
+    <part name="parameters" element="s0:GetPotentialScheduleAtPriority" />
+  </message>
+  <message name="GetPotentialScheduleAtPrioritySoapOut">
+    <part name="parameters" element="s0:GetPotentialScheduleAtPriorityResponse" />
+  </message>
+  <portType name="BTVSchedulerSoap">
+    <operation name="GetJobs">
+      <input message="s0:GetJobsSoapIn" />
+      <output message="s0:GetJobsSoapOut" />
+    </operation>
+    <operation name="GetUpcomingRecordings">
+      <input message="s0:GetUpcomingRecordingsSoapIn" />
+      <output message="s0:GetUpcomingRecordingsSoapOut" />
+    </operation>
+    <operation name="EditRecordingJob">
+      <input message="s0:EditRecordingJobSoapIn" />
+      <output message="s0:EditRecordingJobSoapOut" />
+    </operation>
+    <operation name="GetPossibleRecordings">
+      <input message="s0:GetPossibleRecordingsSoapIn" />
+      <output message="s0:GetPossibleRecordingsSoapOut" />
+    </operation>
+    <operation name="GetEpisodeStatus">
+      <input message="s0:GetEpisodeStatusSoapIn" />
+      <output message="s0:GetEpisodeStatusSoapOut" />
+    </operation>
+    <operation name="GetBlockedRecordings">
+      <input message="s0:GetBlockedRecordingsSoapIn" />
+      <output message="s0:GetBlockedRecordingsSoapOut" />
+    </operation>
+    <operation name="GetExistingConflicts">
+      <input message="s0:GetExistingConflictsSoapIn" />
+      <output message="s0:GetExistingConflictsSoapOut" />
+    </operation>
+    <operation name="GetPotentialConflicts">
+      <input message="s0:GetPotentialConflictsSoapIn" />
+      <output message="s0:GetPotentialConflictsSoapOut" />
+    </operation>
+    <operation name="GetForcedRecordings">
+      <input message="s0:GetForcedRecordingsSoapIn" />
+      <output message="s0:GetForcedRecordingsSoapOut" />
+    </operation>
+    <operation name="GetRejectedRecordings">
+      <input message="s0:GetRejectedRecordingsSoapIn" />
+      <output message="s0:GetRejectedRecordingsSoapOut" />
+    </operation>
+    <operation name="GetRecentRecordings">
+      <input message="s0:GetRecentRecordingsSoapIn" />
+      <output message="s0:GetRecentRecordingsSoapOut" />
+    </operation>
+    <operation name="ReprioritizeJob">
+      <input message="s0:ReprioritizeJobSoapIn" />
+      <output message="s0:ReprioritizeJobSoapOut" />
+    </operation>
+    <operation name="RemoveRecordingJob">
+      <input message="s0:RemoveRecordingJobSoapIn" />
+      <output message="s0:RemoveRecordingJobSoapOut" />
+    </operation>
+    <operation name="AddRecordingJob">
+      <input message="s0:AddRecordingJobSoapIn" />
+      <output message="s0:AddRecordingJobSoapOut" />
+    </operation>
+    <operation name="SetGlobalPadding">
+      <input message="s0:SetGlobalPaddingSoapIn" />
+      <output message="s0:SetGlobalPaddingSoapOut" />
+    </operation>
+    <operation name="GetRecordings">
+      <input message="s0:GetRecordingsSoapIn" />
+      <output message="s0:GetRecordingsSoapOut" />
+    </operation>
+    <operation name="GetPotentialRecordings">
+      <input message="s0:GetPotentialRecordingsSoapIn" />
+      <output message="s0:GetPotentialRecordingsSoapOut" />
+    </operation>
+    <operation name="GetNextRecording">
+      <input message="s0:GetNextRecordingSoapIn" />
+      <output message="s0:GetNextRecordingSoapOut" />
+    </operation>
+    <operation name="AddBlockedRecordings">
+      <input message="s0:AddBlockedRecordingsSoapIn" />
+      <output message="s0:AddBlockedRecordingsSoapOut" />
+    </operation>
+    <operation name="AddForcedRecordings">
+      <input message="s0:AddForcedRecordingsSoapIn" />
+      <output message="s0:AddForcedRecordingsSoapOut" />
+    </operation>
+    <operation name="RemoveBlockedRecordings">
+      <input message="s0:RemoveBlockedRecordingsSoapIn" />
+      <output message="s0:RemoveBlockedRecordingsSoapOut" />
+    </operation>
+    <operation name="RemoveForcedRecordings">
+      <input message="s0:RemoveForcedRecordingsSoapIn" />
+      <output message="s0:RemoveForcedRecordingsSoapOut" />
+    </operation>
+    <operation name="AddRecentRecordings">
+      <input message="s0:AddRecentRecordingsSoapIn" />
+      <output message="s0:AddRecentRecordingsSoapOut" />
+    </operation>
+    <operation name="RemoveRecentRecordings">
+      <input message="s0:RemoveRecentRecordingsSoapIn" />
+      <output message="s0:RemoveRecentRecordingsSoapOut" />
+    </operation>
+    <operation name="GetPotentialScheduleAtPriority">
+      <input message="s0:GetPotentialScheduleAtPrioritySoapIn" />
+      <output message="s0:GetPotentialScheduleAtPrioritySoapOut" />
+    </operation>
+  </portType>
+  <binding name="BTVSchedulerSoap" type="s0:BTVSchedulerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetJobs">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetJobs" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetUpcomingRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetUpcomingRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="EditRecordingJob">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/EditRecordingJob" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPossibleRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetPossibleRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEpisodeStatus">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetEpisodeStatus" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetBlockedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetBlockedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetExistingConflicts">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetExistingConflicts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPotentialConflicts">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetPotentialConflicts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetForcedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetForcedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetRejectedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetRejectedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetRecentRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetRecentRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ReprioritizeJob">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/ReprioritizeJob" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveRecordingJob">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/RemoveRecordingJob" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddRecordingJob">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/AddRecordingJob" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetGlobalPadding">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/SetGlobalPadding" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPotentialRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetPotentialRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetNextRecording">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetNextRecording" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddBlockedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/AddBlockedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddForcedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/AddForcedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveBlockedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/RemoveBlockedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveForcedRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/RemoveForcedRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddRecentRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/AddRecentRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveRecentRecordings">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/RemoveRecentRecordings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPotentialScheduleAtPriority">
+      <soap:operation soapAction="http://www.snapstream.com/WebService/GetPotentialScheduleAtPriority" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BTVScheduler">
+    <port name="BTVSchedulerSoap" binding="s0:BTVSchedulerSoap">
+      <soap:address location="http://127.0.0.1:8129/wsdl/BTVScheduler.asmx" />
+    </port>
+  </service>
+</definitions>
